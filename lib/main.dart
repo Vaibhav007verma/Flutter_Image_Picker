@@ -5,7 +5,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 // import 'package:google_ml_kit/google_ml_kit.dart';
-import 'package:google_mlkit_image_labeling/google_mlkit_image_labeling.dart';
+// import 'package:google_mlkit_image_labeling/google_mlkit_image_labeling.dart';
 import 'package:image_picker/image_picker.dart';
 
 void main() {
@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
           imageFile = pickedImage;
         });
           // getRecognisedText(pickedImage);
-        getImageLabels(pickedImage);
+        // getImageLabels(pickedImage);
       }
     }catch(e){
         setState(() {
@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
   //   setState(() { });
   // }
 
-  void getImageLabels(XFile image) async {
+  /*void getImageLabels(XFile image) async {
       final inputImage = InputImage.fromFilePath(image.path);
       ImageLabeler imageLabeler = ImageLabeler(options: ImageLabelerOptions());
       List<ImageLabel> labels = await imageLabeler.processImage(inputImage);
@@ -102,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
       scannedText = sb.toString();
       loader = false;
       setState(() { });
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -115,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                if(loader == true) CircularProgressIndicator(),
+                // if(loader == true) CircularProgressIndicator(),
                 if(imageFile != null) Container(height:300,width: 300,color: Colors.grey[300], child: Image.file(File(imageFile!.path)), margin: EdgeInsets.only(bottom: 10),),
                 Container(width: MediaQuery.of(context).size.width*0.5,
                   height: 50, child: Row(
@@ -127,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 // ElevatedButton(onPressed: () => getRecognisedText(imageFile!), child: Text("Text Recognize")),
                 // ElevatedButton(onPressed: () => getImageLabels(imageFile!), child: Text("Image Recognize")),
-                Container(margin: EdgeInsets.only(top: 10), child: Text(scannedText)),
+                // Container(margin: EdgeInsets.only(top: 10), child: Text(scannedText)),
 
               ],
             ),
